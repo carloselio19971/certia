@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle, Phone, Clock, MapPin } from "lucide-react";
+import { Mail, Phone, Clock, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 import { contactFaqs, contactInfo } from "@/data/contact";
+import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
@@ -75,15 +77,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   </li>
                 </ul>
 
-                <button
-                  type="button"
-                  aria-label="Contactar por WhatsApp — próximamente disponible"
-                  title="WhatsApp — próximamente disponible"
-                  className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
-                >
-                  <MessageCircle className="h-4 w-4" aria-hidden />
-                  WhatsApp
-                </button>
+                <WhatsAppLink
+                  message={WHATSAPP_MESSAGES.contact}
+                  variant="button"
+                  className="mt-8 w-full"
+                  label="WhatsApp"
+                />
               </div>
             </aside>
 

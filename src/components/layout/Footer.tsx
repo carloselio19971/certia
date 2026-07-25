@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { categories } from "@/data/categories";
+import { contactInfo } from "@/data/contact";
+import { legalLinks } from "@/data/legal";
 import { navLinks } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
@@ -10,8 +12,8 @@ export function Footer() {
   return (
     <footer className="bg-primary text-white">
       <Container as="div" className="py-14 md:py-16">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="lg:col-span-1">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-5">
+          <div className="lg:col-span-2">
             <Logo variant="light" />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/75">
               Academia de capacitación tecnológica y certificaciones
@@ -28,7 +30,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-sm"
+                    className="text-sm text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm"
                   >
                     {link.label}
                   </Link>
@@ -42,11 +44,11 @@ export function Footer() {
               Categorías
             </h2>
             <ul className="mt-4 space-y-2">
-              {categories.slice(0, 5).map((category) => (
+              {categories.map((category) => (
                 <li key={category.id}>
                   <Link
                     href={category.href}
-                    className="text-sm text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-sm"
+                    className="text-sm text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm"
                   >
                     {category.title}
                   </Link>
@@ -57,19 +59,28 @@ export function Footer() {
 
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-wider text-white/90">
-              Contacto
+              Legal y contacto
             </h2>
-            <ul className="mt-4 space-y-3 text-sm text-white/70">
+            <ul className="mt-4 space-y-2">
+              {legalLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/70 transition-colors hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <ul className="mt-6 space-y-3 border-t border-white/10 pt-4 text-sm text-white/70">
               <li>
-                <span className="block text-white/90">Correo</span>
-                <span>info@certia.academy</span>
-                <span className="mt-1 block text-xs text-white/50">
-                  (provisional)
-                </span>
+                <span className="block text-white/90">Correo (provisional)</span>
+                <span>{contactInfo.email}</span>
               </li>
               <li>
                 <span className="block text-white/90">Horario</span>
-                <span>Lunes a viernes, 9:00 – 18:00</span>
+                <span>{contactInfo.schedule.replace(" (hora local, provisional)", "")}</span>
               </li>
               <li>
                 <Link
@@ -86,8 +97,8 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
           <p>© {currentYear} CERTIA Academy. Todos los derechos reservados.</p>
           <p className="text-xs text-white/45">
-            Algunos contenidos del sitio son demostrativos y serán reemplazados
-            con información oficial.
+            Contenido demostrativo y legal en borrador — pendiente de datos
+            oficiales.
           </p>
         </div>
       </Container>

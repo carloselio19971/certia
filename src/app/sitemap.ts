@@ -12,6 +12,10 @@ const staticRoutes = [
   "/empresas",
   "/nosotros",
   "/contacto",
+  "/politica-de-privacidad",
+  "/terminos-y-condiciones",
+  "/politica-de-cookies",
+  "/libro-de-reclamaciones",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,7 +1,9 @@
-import { Calendar, Clock, Layers, MessageCircle, Monitor } from "lucide-react";
+import { Calendar, Clock, Layers, Monitor } from "lucide-react";
 import type { Course } from "@/types";
+import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { WhatsAppLink } from "@/components/ui/WhatsAppLink";
 
 type CourseDetailHeroProps = {
   course: Course;
@@ -12,6 +14,7 @@ export function CourseDetailHero({ course }: CourseDetailHeroProps) {
     <section className="overflow-hidden bg-primary text-white">
       <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <Breadcrumb
+          variant="light"
           items={[
             { label: "Inicio", href: "/" },
             { label: "Cursos", href: "/cursos" },
@@ -85,15 +88,11 @@ export function CourseDetailHero({ course }: CourseDetailHeroProps) {
               >
                 Solicitar información
               </ButtonLink>
-              <button
-                type="button"
-                aria-label="Contactar por WhatsApp — próximamente disponible"
-                title="WhatsApp — próximamente disponible"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-transparent px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-secondary hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden />
-                WhatsApp
-              </button>
+              <WhatsAppLink
+                message={WHATSAPP_MESSAGES.course(course.title)}
+                variant="buttonInverse"
+                label="WhatsApp"
+              />
             </div>
           </div>
 

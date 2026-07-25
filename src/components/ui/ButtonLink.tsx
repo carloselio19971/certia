@@ -14,19 +14,20 @@ type ButtonLinkProps = {
   variant?: ButtonVariant;
   className?: string;
   external?: boolean;
+  onClick?: () => void;
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-secondary text-white hover:bg-secondary/90 focus-visible:ring-secondary",
+    "bg-secondary text-white hover:bg-secondary/90 active:bg-secondary/80 focus-visible:ring-secondary",
   secondary:
-    "bg-primary text-white hover:bg-primary/90 focus-visible:ring-primary",
+    "bg-primary text-white hover:bg-primary/90 active:bg-primary/80 focus-visible:ring-primary",
   ghost:
-    "bg-transparent text-primary hover:bg-bg-muted focus-visible:ring-primary",
+    "bg-transparent text-primary hover:bg-bg-muted active:bg-bg-muted/80 focus-visible:ring-primary",
   outline:
-    "border border-primary/20 bg-white text-primary hover:border-secondary hover:text-secondary focus-visible:ring-secondary",
+    "border border-primary/20 bg-white text-primary hover:border-secondary hover:text-secondary active:bg-bg-light focus-visible:ring-secondary",
   outlineInverse:
-    "border border-white/25 bg-transparent text-white hover:border-secondary hover:bg-white/10 hover:text-white focus-visible:ring-secondary focus-visible:ring-offset-primary",
+    "border border-white/25 bg-transparent text-white hover:border-secondary hover:bg-white/10 hover:text-white active:bg-white/15 focus-visible:ring-secondary focus-visible:ring-offset-primary",
 };
 
 const baseStyles =
@@ -38,6 +39,7 @@ export function ButtonLink({
   variant = "primary",
   className = "",
   external = false,
+  onClick,
 }: ButtonLinkProps) {
   const classes = `${baseStyles} ${variantStyles[variant]} ${className}`;
 
@@ -48,6 +50,7 @@ export function ButtonLink({
         className={classes}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={onClick}
       >
         {children}
       </a>
@@ -55,7 +58,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={onClick}>
       {children}
     </Link>
   );

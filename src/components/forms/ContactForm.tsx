@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import type {
   ContactFormData,
@@ -231,9 +232,13 @@ export function ContactForm({ defaultCourseSlug = "" }: ContactFormProps) {
         label={
           <>
             Acepto la{" "}
-            <span className="font-medium text-primary">
+            <Link
+              href="/politica-de-privacidad"
+              className="font-medium text-primary underline decoration-primary/30 underline-offset-2 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-sm"
+              onClick={(event) => event.stopPropagation()}
+            >
               política de privacidad
-            </span>{" "}
+            </Link>{" "}
             y el tratamiento de mis datos para recibir información de CERTIA
             Academy.
           </>

@@ -84,6 +84,7 @@ export function MobileMenu() {
               href="/cursos"
               variant="primary"
               className="w-full"
+              onClick={() => setOpen(false)}
             >
               Explorar cursos
             </ButtonLink>
@@ -91,6 +92,7 @@ export function MobileMenu() {
               href="/empresas"
               variant="outlineInverse"
               className="w-full"
+              onClick={() => setOpen(false)}
             >
               Capacitación para empresas
             </ButtonLink>

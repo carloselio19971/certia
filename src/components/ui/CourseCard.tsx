@@ -42,7 +42,7 @@ export function CourseCard({ course }: CourseCardProps) {
 
       <Link
         href={`/cursos/${course.slug}`}
-        className="mt-6 inline-flex items-center justify-center rounded-lg border border-primary/15 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:border-secondary hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+        className="mt-6 inline-flex items-center justify-center rounded-lg border border-primary/15 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:border-secondary hover:text-secondary active:bg-bg-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
       >
         Ver programa
       </Link>

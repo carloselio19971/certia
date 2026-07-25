@@ -31,7 +31,8 @@ export function Header() {
             Explorar cursos
           </ButtonLink>
           <ButtonLink href="/empresas" variant="outlineInverse">
-            Capacitación para empresas
+            <span className="hidden xl:inline">Capacitación para empresas</span>
+            <span className="xl:hidden">Para empresas</span>
           </ButtonLink>
         </div>
 

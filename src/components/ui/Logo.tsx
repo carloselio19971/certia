@@ -1,31 +1,34 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type LogoProps = {
   className?: string;
+  /** Mantenido por compatibilidad con call-sites existentes. */
   variant?: "light" | "dark";
+  onNavigate?: () => void;
+  priority?: boolean;
 };
 
-export function Logo({ className = "", variant = "dark" }: LogoProps) {
-  const primaryColor = variant === "light" ? "text-white" : "text-primary";
-  const secondaryColor =
-    variant === "light" ? "text-white/70" : "text-text-secondary";
-
+export function Logo({
+  className = "",
+  onNavigate,
+  priority = false,
+}: LogoProps) {
   return (
     <Link
       href="/"
-      className={`group inline-flex flex-col leading-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded-sm ${className}`}
-      aria-label="CERTIA Academy — Inicio"
+      onClick={onNavigate}
+      aria-label="Ir al inicio de CERTIA Academy"
+      className={`flex shrink-0 items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 focus-visible:ring-offset-primary rounded-sm ${className}`}
     >
-      <span
-        className={`text-xl font-bold tracking-[0.18em] ${primaryColor} transition-colors group-hover:text-secondary`}
-      >
-        CERTIA
-      </span>
-      <span
-        className={`mt-1 text-[0.65rem] font-medium uppercase tracking-[0.35em] ${secondaryColor}`}
-      >
-        Academy
-      </span>
+      <Image
+        src="/images/certia-logo-navbar.png"
+        alt="CERTIA Academy"
+        width={320}
+        height={96}
+        priority={priority}
+        className="h-auto w-[155px] object-contain md:w-[175px] lg:w-[205px]"
+      />
     </Link>
   );
 }

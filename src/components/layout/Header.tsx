@@ -7,9 +7,9 @@ import { MobileMenu } from "@/components/layout/MobileMenu";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-primary/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-primary md:bg-primary/95 md:backdrop-blur-md">
       <Container as="div" className="flex h-16 items-center justify-between md:h-20">
-        <Logo variant="light" />
+        <Logo variant="light" priority />
 
         <nav
           className="hidden items-center gap-8 md:flex"

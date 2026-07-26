@@ -3,7 +3,7 @@ import { Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { SITE_NAME, SITE_URL } from "@/lib/site-config";
+import { SITE_URL } from "@/lib/site-config";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -15,11 +15,11 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} | Formación y certificaciones tecnológicas`,
-    template: `%s | ${SITE_NAME}`,
+    default: "CERTIA Academy",
+    template: "%s | CERTIA Academy",
   },
   description:
-    "Capacitación práctica en inteligencia artificial, programación, datos, ciberseguridad, nube y certificaciones profesionales.",
+    "Formación tecnológica, certificaciones profesionales y capacitación para empresas.",
 };
 
 export default function RootLayout({

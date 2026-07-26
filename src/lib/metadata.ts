@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE_NAME, SITE_URL } from "@/lib/site-config";
 
 type PageMetadataOptions = {
-  title: string;
+  title?: string;
   description: string;
   path?: string;
 };
@@ -13,17 +13,15 @@ export function createPageMetadata({
   path = "",
 }: PageMetadataOptions): Metadata {
   const url = `${SITE_URL}${path}`;
+  const ogTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
 
-  return {
-    title: {
-      absolute: title,
-    },
+  const metadata: Metadata = {
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -31,6 +29,12 @@ export function createPageMetadata({
       type: "website",
     },
   };
+
+  if (title) {
+    metadata.title = title;
+  }
+
+  return metadata;
 }
 
 export function createCourseMetadata(
@@ -38,19 +42,16 @@ export function createCourseMetadata(
   description: string,
   slug: string,
 ): Metadata {
-  const pageTitle = `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}/cursos/${slug}`;
 
   return {
-    title: {
-      absolute: pageTitle,
-    },
+    title,
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: pageTitle,
+      title: `${title} | ${SITE_NAME}`,
       description,
       url,
       siteName: SITE_NAME,

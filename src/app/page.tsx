@@ -11,7 +11,6 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "CERTIA Academy | Formación y certificaciones tecnológicas",
   description:
     "Capacitación práctica en inteligencia artificial, programación, datos, ciberseguridad, nube y certificaciones profesionales.",
   path: "/",

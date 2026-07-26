@@ -29,7 +29,7 @@ export async function generateMetadata({
   const course = getCourseBySlug(slug);
 
   if (!course) {
-    return { title: "Curso no encontrado | CERTIA Academy" };
+    return { title: "Curso no encontrado" };
   }
 
   return createCourseMetadata(course.title, course.shortDescription, course.slug);

@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Cursos | CERTIA Academy",
+  title: "Cursos",
   description:
     "Explora el catálogo de cursos en inteligencia artificial, programación, ciberseguridad, cloud, data y gestión de proyectos.",
   path: "/cursos",

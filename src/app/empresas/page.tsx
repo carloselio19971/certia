@@ -16,9 +16,9 @@ import {
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Capacitación para empresas | CERTIA Academy",
+  title: "Capacitación para empresas",
   description:
-    "Programas corporativos personalizados en tecnología, IA, ciberseguridad, cloud, data y gestión de proyectos para equipos de alto rendimiento.",
+    "Programas de formación tecnológica personalizados para empresas y equipos.",
   path: "/empresas",
 });
 

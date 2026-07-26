@@ -8,7 +8,7 @@ import { certificationTracks } from "@/data/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Certificaciones | CERTIA Academy",
+  title: "Certificaciones",
   description:
     "Rutas de preparación para certificaciones tecnológicas en cloud, ciberseguridad, data y desarrollo de software.",
   path: "/certificaciones",

@@ -4,7 +4,7 @@ import { LEGAL_PLACEHOLDERS } from "@/data/legal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Términos y condiciones | CERTIA Academy",
+  title: "Términos y condiciones",
   description:
     "Borrador estructural de términos y condiciones de CERTIA Academy. Pendiente de revisión legal.",
   path: "/terminos-y-condiciones",

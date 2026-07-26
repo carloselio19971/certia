@@ -4,7 +4,7 @@ import { LEGAL_PLACEHOLDERS } from "@/data/legal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Política de privacidad | CERTIA Academy",
+  title: "Política de privacidad",
   description:
     "Borrador estructural de la política de privacidad de CERTIA Academy. Pendiente de revisión legal.",
   path: "/politica-de-privacidad",

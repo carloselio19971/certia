@@ -4,7 +4,7 @@ import { LEGAL_PLACEHOLDERS } from "@/data/legal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Política de cookies | CERTIA Academy",
+  title: "Política de cookies",
   description:
     "Borrador estructural de la política de cookies de CERTIA Academy.",
   path: "/politica-de-cookies",

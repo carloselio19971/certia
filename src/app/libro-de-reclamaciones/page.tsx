@@ -5,7 +5,7 @@ import { LEGAL_PLACEHOLDERS } from "@/data/legal";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Libro de reclamaciones | CERTIA Academy",
+  title: "Libro de reclamaciones",
   description:
     "Información estructural sobre el libro de reclamaciones de CERTIA Academy.",
   path: "/libro-de-reclamaciones",

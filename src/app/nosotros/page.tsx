@@ -8,7 +8,7 @@ import { benefits } from "@/data/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Nosotros | CERTIA Academy",
+  title: "Nosotros",
   description:
     "Conoce la misión, metodología y enfoque de CERTIA Academy en formación tecnológica y certificaciones profesionales.",
   path: "/nosotros",

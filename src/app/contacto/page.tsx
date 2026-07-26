@@ -9,7 +9,7 @@ import { WHATSAPP_MESSAGES } from "@/lib/whatsapp";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Contacto | CERTIA Academy",
+  title: "Contacto",
   description:
     "Solicita información sobre cursos, certificaciones y programas de capacitación tecnológica en CERTIA Academy.",
   path: "/contacto",
